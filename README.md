@@ -1,16 +1,13 @@
-# flutter_shopoik
+# flutter_shopik (Магазин продуктов)
 
-A new Flutter project.
+# Практическое задание № 2
 
-## Getting Started
+Проект на Flutter
 
-This project is a starting point for a Flutter application.
+Сделано для РТУ МИРЭА в качестве ДЗ
 
-A few resources to get you started if this is your first Flutter project:
+Программирование корпоративных систем
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Багаев Тимур Рамазанович ЭФБО-05-22
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![alt text](<Снимок экрана 2024-09-23 в 19.10.06.png>)
