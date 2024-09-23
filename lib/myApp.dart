@@ -52,6 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Column(
         children: [
           Expanded(child: _widgetOptions.elementAt(_selectedScreen)),
+          // AuthPage()
           CupertinoTabBar(
             items: const [
               BottomNavigationBarItem(

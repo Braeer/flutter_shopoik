@@ -60,9 +60,10 @@ class _AuthPageState extends State<AuthPage> {
         CupertinoButton(
           child: const Text('Зарегистрироваться'),
           onPressed: () {
-            // Navigator.push(context, CupertinoPageRoute(builder: (context) {
-            //   return RegistrationPage();
-            _showUnavailableDialog(context);
+            Navigator.push(context, CupertinoPageRoute(builder: (context) {
+              return RegistrationPage();
+            }));
+            // _showUnavailableDialog(context);
           },
         )
       ]),

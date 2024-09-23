@@ -1,36 +1,64 @@
 import 'package:flutter/cupertino.dart';
-
-class Product {
-  final String name;
-  final String description;
-  final String imageUrl;
-
-  Product(
-      {required this.name, required this.description, required this.imageUrl});
-}
+import 'package:flutter_shopoik/models/productModels.dart';
+import 'package:flutter_shopoik/widget/product_card.dart';
 
 // Пример списка продуктов
-List<Product> products = [
-  Product(
+List<ProductModels> products2 = [
+  ProductModels(
     name: 'Яблоко',
     description: 'Свежее и вкусное',
-    imageUrl:
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Red_Apple.jpg/1200px-Red_Apple.jpg',
+    // imageUrl:
+    //     'https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Red_Apple.jpg/1200px-Red_Apple.jpg',
+    imageUrl: 'assets/images/apple.jpg',
   ),
-  Product(
+  ProductModels(
     name: 'Банан',
     description: 'Полезный и питательный',
-    imageUrl: 'https://via.placeholder.com/100',
+    imageUrl: 'assets/images/banana.jpg',
   ),
-  Product(
+  ProductModels(
     name: 'Апельсин',
     description: 'Сочный и сладкий',
-    imageUrl: 'https://via.placeholder.com/100',
+    imageUrl: 'assets/images/orange.jpg',
   ),
-  Product(
+  ProductModels(
+    name: 'Черешня',
+    description: 'Сладкий и полезный',
+    imageUrl: 'assets/images/cherry.jpg',
+  ),
+  ProductModels(
     name: 'Груша',
     description: 'Сладкая и вкусная',
-    imageUrl: 'https://via.placeholder.com/100',
+    imageUrl: 'assets/images/cherry.jpg',
+  ),
+  ProductModels(
+    name: 'Киви',
+    description: 'Вкусный и полезный',
+    imageUrl: 'assets/images/cherry.jpg',
+  ),
+
+  ProductModels(
+    name: 'Мандарин',
+    description: 'Сочный и сладкий',
+    imageUrl: 'assets/images/cherry.jpg',
+  ),
+
+  ProductModels(
+    name: 'Персик',
+    description: 'Сладкий и вкусный',
+    imageUrl: 'assets/images/cherry.jpg',
+  ),
+
+  ProductModels(
+    name: 'Слива',
+    description: 'Вкусная и полезная',
+    imageUrl: 'assets/images/cherry.jpg',
+  ),
+
+  ProductModels(
+    name: 'Черешня',
+    description: 'Сладкая и вкусная',
+    imageUrl: 'assets/images/cherry.jpg',
   ),
   // Добавьте больше продуктов при необходимости
 ];
@@ -40,66 +68,22 @@ class ProductPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(12.0),
         child: GridView.builder(
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            crossAxisSpacing: 16.0,
-            mainAxisSpacing: 16.0,
-          ),
-          itemCount: products.length,
+              crossAxisCount: 2,
+              crossAxisSpacing: 16.0,
+              mainAxisSpacing: 16.0,
+              childAspectRatio: 0.62),
+          itemCount: products2.length,
           itemBuilder: (context, index) {
-            return ProductCard(product: products[index]);
+            return ProductCard(
+              product: ProductModels(
+                  name: products2[index].name,
+                  description: products2[index].description,
+                  imageUrl: products2[index].imageUrl),
+            );
           },
-        ),
-      ),
-    );
-  }
-}
-
-class ProductCard extends StatelessWidget {
-  final Product product;
-
-  const ProductCard({Key? key, required this.product}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: CupertinoColors.white,
-        borderRadius: BorderRadius.circular(12.0),
-        boxShadow: [
-          BoxShadow(
-            color: CupertinoColors.systemGrey.withOpacity(0.2),
-            blurRadius: 5.0,
-            spreadRadius: 1.0,
-          ),
-        ],
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Image.network(product.imageUrl, height: 100, width: 100),
-            SizedBox(height: 8.0),
-            Text(
-              product.name,
-              style: CupertinoTheme.of(context)
-                  .textTheme
-                  .textStyle
-                  .copyWith(fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 4.0),
-            Text(
-              product.description,
-              style: CupertinoTheme.of(context)
-                  .textTheme
-                  .textStyle
-                  .copyWith(fontSize: 12),
-              textAlign: TextAlign.center,
-            ),
-          ],
         ),
       ),
     );
